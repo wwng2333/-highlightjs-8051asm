@@ -1,0 +1,10 @@
+{
+  "name": "highlightjs-8051asm",
+  "description": "A highlight.js grammar for Assembly language for 8051",
+  "authors": "Robin Lu",
+  "version": "0.1.0",
+  "main": "./src/languages/8051asm.js",
+  "dependencies": {
+    "highlight.js": "^11.4.0"
+  }
+}
