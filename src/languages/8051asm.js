@@ -37,7 +37,7 @@ export default function(hljs) {
         hljs.BINARY_NUMBER_MODE, // 0b...
         {
           className: 'number',
-          begin: '@[0-9a-fA-F]+H' // 0A2H, 093H
+          begin: '[0-9a-fA-F]+H' // 0A2H, 093H
         },
         hljs.QUOTE_STRING_MODE,
         {
