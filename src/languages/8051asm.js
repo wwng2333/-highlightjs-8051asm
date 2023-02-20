@@ -8,7 +8,7 @@ export default function(hljs) {
     return {
       name: 'Intel 8051 Assembly',
       case_insensitive: true,
-      aliases: [ '8051', '8051asm', 'asm8051' ],
+      aliases: [ '8051' ],
       keywords: {
         $pattern: '\\.?' + hljs.IDENT_RE,
         keyword:
@@ -20,7 +20,6 @@ export default function(hljs) {
           built_in:
           /* Special Function Registers (SFRs) */
           'A ACC B DPL DPH IE IP P0 P1 P2 P3 PCON PSW SCON SBUF SP TMOD TCON TL0 TH0 TL1 TH1 '
-          + 'ucsr0a ucsr0b ubrr0l acsr admux adcsr adch adcl porte ddre pine pinf'
       },
       contains: [
         hljs.C_BLOCK_COMMENT_MODE,
@@ -34,6 +33,11 @@ export default function(hljs) {
         {
           className: 'number',
           begin: '\\b(\\$[a-zA-Z0-9]+|0o[0-7]+)' // $..., 0o...
+        },
+        hljs.BINARY_NUMBER_MODE, // 0b...
+        {
+          className: 'number',
+          begin: '@[0-9a-fA-F]+H' // 0A2H, 093H
         },
         hljs.QUOTE_STRING_MODE,
         {
